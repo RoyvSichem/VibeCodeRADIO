@@ -7,7 +7,7 @@ description: "Maak een nieuw RADIO-trainingsdeck (HTML-slides) voor een vibecodi
 
 Gebruik deze skill wanneer iemand een nieuw RADIO-trainingsdeck wil. Werk in het Nederlands.
 
-Template: `radio-template.html` in de root van deze repository. Voorbeeld van een ingevuld deck: `vraagscherper.html`.
+Template: `radio-template.html` in de root van deze repository. Het is al ingevuld met een voorbeeld (de casus Vraagscherper) en voorbeeldnamen; vervang die door de gegevens van de training.
 
 ## Werkwijze
 
@@ -45,7 +45,7 @@ var TRAINING = {
 
   /* Duo's */
   deelnemers: 5,
-  namen: ["Leif","Swanda","Karin","Rene","Richard"],  /* optioneel, mag [] zijn */
+  namen: ["Deelnemer 1","Deelnemer 2","Deelnemer 3","Deelnemer 4","Deelnemer 5"],  /* optioneel, mag [] zijn */
   husselen: false,   /* true = willekeurig verdelen */
 
   /* Slide 3: demo door de trainer */

@@ -41,8 +41,7 @@ Trainers: Roy van Sichem (projectleider en AI-trainer) en Machiel Ribbens (AI-tr
 
 | Bestand | Wat het is |
 |---|---|
-| `radio-template.html` | Het herbruikbare template. Niet zelf in een training gebruiken, alleen kopiëren. |
-| `vraagscherper.html` | Voorbeelddeck (DT van RADIO, 4 november 2026). |
+| `radio-template.html` | Het herbruikbare template, ingevuld met een voorbeeld en voorbeeldnamen. Niet zelf in een training gebruiken, alleen kopiëren. |
 | `INSTRUCTIES.md` | Uitgebreide handleiding, inclusief het volledige `TRAINING`-blok en alle tips. |
 | `skills/radio-slidedeck/SKILL.md` | De Claude-skill die de vragen stelt en het deck invult. |
 

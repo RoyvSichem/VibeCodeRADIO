@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
-<title>RADIO · Training</title>
+<title>RADIO · Vraagscherper</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A1322'/%3E%3Crect x='14' y='14' width='9' height='36' fill='%23D52B1E'/%3E%3Ctext x='30' y='45' font-family='Arial,sans-serif' font-weight='700' font-size='30' fill='%23ffffff'%3ER%3C/text%3E%3C/svg%3E">
 <style>
 /* ============ Fonts: IBM Plex (Bold Monday / IBM), embedded ============ */
@@ -241,17 +241,16 @@ kbd{font-family:var(--mono);font-size:12px;background:rgba(234,241,248,.07);bord
 var TRAINING = {
 
   /* Titelslide */
-  titel: "Maakbaar",
-  ondertitel: "{doelgroep}'s bouwen met AI",
-  datum: "15 april 2026",
+  titel: "In een stroomversnelling",
+  ondertitel: "Het DT van RADIO bouwt met AI",
+  datum: "4 november 2026",
 
-  /* Doelgroep, bijv. "SG", "manager", "beleidsmedewerker" */
-  doelgroep: "SG",
+  /* Doelgroep */
+  doelgroep: "DT-lid",
 
-  /* Duo's: aantal deelnemers bepaalt het aantal duo's (oneven = laatste groep wordt een trio).
-     Namen zijn optioneel. Vul je ze in, dan worden ze op volgorde in duo's gezet. */
-  deelnemers: 12,
-  namen: ["Maarten","Anita","Bas","Christiaan","Marieke","Vincent","Gert Jan","Roald","Sandor","Mo","Paul","Roderick"],
+  /* Duo's: 5 deelnemers = 1 duo en 1 trio */
+  deelnemers: 5,
+  namen: ["Deelnemer 1","Deelnemer 2","Deelnemer 3","Deelnemer 4","Deelnemer 5"],
   husselen: false,          /* true = namen willekeurig verdelen */
 
   /* Slide 3 · demo: de trainer bouwt live het basisdashboard */
@@ -260,11 +259,10 @@ var TRAINING = {
     tekst: "Er is een grote overstroming in Limburg. Duizenden mensen moeten geëvacueerd worden. We hebben opvanglocaties in de regio, maar niet genoeg plek voor iedereen. Bouw een crisiscoördinatie-dashboard waarmee ik per gemeente kan zien hoeveel evacuees er zijn en hoeveel opvangplekken beschikbaar zijn. Toon direct waar de tekorten zitten, kleurgecodeerd van groen naar rood. Toon de gemeenten op een schematische kaart van Limburg. Geef automatisch een herverdelingsadvies: welke mensen moeten naar welke gemeente verplaatst worden om de druk te spreiden."
   },
 
-  /* Wie zijn wij (1 tot 4 personen; initialen worden automatisch gemaakt) */
+  /* Wie zijn wij */
   team: [
-    { naam: "Eelco Hotting",      rol: "Strategisch Adviseur", org: "Digitale Overheid · BZK" },
-    { naam: "Giulia Bössenecker", rol: "AI Adviseur",          org: "CIO Office · Defensie" },
-    { naam: "Anne Schuth",        rol: "Staff Engineer",       org: "ODI · BZK" }
+    { naam: "Roy van Sichem",  rol: "Projectleider en AI-trainer", org: "RADIO" },
+    { naam: "Machiel Ribbens", rol: "AI-trainer",                  org: "RADIO" }
   ],
 
   /* Demo-vervolg: aanpassing op prompt 1 */
@@ -276,28 +274,32 @@ var TRAINING = {
   /* Prompt 3: specifiek voor de doelgroep */
   prompt3: {
     titel: "Prompt 3 · Handelingsperspectief",
-    tekst: "Wat kan ik als {doelgroep} nu het beste doen? Geef mij drie concrete opties, met voor elke optie: wat het oplost, wat het kost, wie ik moet bellen, en welk risico ik ermee neem. Gebruik de data uit het dashboard om de opties te onderbouwen."
+    tekst: "Wat kan ik als lid van het directieteam nu het beste doen? Geef mij drie concrete opties, met voor elke optie: wat het oplost, wat het kost, wie ik moet bellen, en welk risico ik ermee neem. Gebruik de data uit het dashboard om de opties te onderbouwen."
   },
 
   /* Jullie beurt: use-case prompt die iedereen zelf intypt */
   usecase: {
-    titel: "Prompt · Kamervraag-calculator",
-    tekst: "Maak een interactieve calculator die berekent hoeveel dagen het duurt voordat een Kamervraag beantwoord moet zijn, met een afteltimer en een kleurcode die van groen naar rood gaat. Maak geen plan, bouw het gelijk."
+    titel: "Prompt · DT-besluitvoorstel",
+    tekst: "Maak een tool waarin ik een agendapunt voor het DT plak. De tool maakt er een besluitvoorstel van: wat is de vraag, welke opties zijn er, wat is het advies, en wat moet het DT vandaag besluiten. Toon het als een overzichtelijke kaart met een kleur per urgentie. Maak geen plan, bouw het gelijk."
   },
 
-  /* Menukaart: 2 of 3 dashboard-opties die passen bij de doelgroep */
+  /* Menukaart */
   menukaart: {
-    ondertitel: "Dashboards voor het vraagstuk van de {doelgroep}",
+    ondertitel: "Opdrachten voor het DT van RADIO",
     opties: [
-      /* optioneel per optie: prompt: "..." = volledige prompt, kopieerbaar met een klik op de kaart */
-      { titel: "De WOO-machine",          tekst: "Analyseer een WOO-verzoek, toon de wettelijke tijdlijn en genereer een conceptbesluit.", label: "Digitale dienstverlening" },
-      { titel: "Welke regels kunnen weg?", tekst: "Plak een wettekst, krijg per verplichting een uitleg in gewone taal en een schrapscore van 1 tot 10.", label: "Vereenvoudigen" },
-      { titel: "Wie gaat hierover?",      tekst: "Visualiseer welke ministeries, regelingen en budgetten bij een beleidsprobleem betrokken zijn.", label: "Haagse muren" }
+      { titel: "Vraagscherper",
+        tekst: "Een manager beschrijft een behoefte. De app stelt maximaal vijf verhelderende vragen, maakt een opdrachtkaart en toont de drie best passende specialisten: wie het kan uitvoeren en wie een goede sparringpartner is.",
+        label: "Vraag en aanbod",
+        prompt: "Bouw een webapp genaamd Vraagscherper voor de Rijksorganisatie ODI (Ontwikkeling, Digitalisering en Innovatie). Een manager van een ministerie beschrijft een behoefte. De app stelt maximaal vijf verhelderende vragen, één voor één, en maakt daarna een opdrachtkaart met: probleem, doel, gewenst resultaat, benodigde expertise en looptijd. Daarna toont de app de drie best passende specialisten uit de lijst hieronder. Specialisten: 1. Sanne de Vries, data-architect, ontwerpt datalandschappen en koppelingen tussen systemen, beschikbaar vanaf volgende maand. 2. Youssef El Amrani, AI-specialist, bouwt en toetst AI-toepassingen voor beleid en uitvoering, beschikbaar. 3. Marloes Jansen, informatiebeveiliger (CISO-office), BIO en risicoanalyses, beperkt beschikbaar (1 dag per week). 4. Thomas Bakker, privacyjurist, AVG, DPIA's en algoritmeregister, beschikbaar. 5. Ingrid Visser, programmamanager digitale transformatie, leidt grote verandertrajecten, niet beschikbaar tot het tweede kwartaal. 6. Daan Mulder, UX-onderzoeker, gebruikersonderzoek en toegankelijkheid (WCAG), beschikbaar. 7. Fatima Ouali, innovatiecoach, design sprints en experimenteren in de overheid, beschikbaar. 8. Pieter van Dijk, enterprise-architect, NORA en de samenhang van overheidsarchitectuur, beperkt beschikbaar. 9. Lotte Hendriks, inkoop- en contractadviseur ICT, aanbestedingen en marktverkenningen, beschikbaar. 10. Ruben Smit, cloud-engineer, migratie naar de Rijkscloud en soevereine cloudoplossingen, beschikbaar vanaf volgende maand. 11. Esther Koster, adviseur digitale inclusie, digitale vaardigheden en begrijpelijke dienstverlening, beschikbaar. 12. Hamid Rahimi, data-analist, dashboards en sturingsinformatie, niet beschikbaar (volgeboekt). Geef per specialist aan waarom die past en of die beschikbaar is. Onderscheid tussen “kan dit uitvoeren” en “goede sparringpartner om de vraag aan te scherpen”. Gebruik Rijkshuisstijl-achtige kleuren en een rustige, zakelijke uitstraling." },
+      { titel: "Capaciteitsradar",
+        tekst: "Zet alle lopende en aangevraagde trajecten naast de beschikbare mensen per kwartaal. Laat zien waar het knelt, wat er schuift als je een nieuw traject aanneemt, en wat het DT kan besluiten.",
+        label: "Sturen op capaciteit",
+        prompt: "Bouw een dashboard genaamd Capaciteitsradar voor het directieteam van RADIO. Verzin twintig lopende en aangevraagde trajecten en vijftien medewerkers met hun expertise en uren per week. Toon per kwartaal de vraag naast de beschikbare capaciteit, kleurgecodeerd van groen naar rood. Laat me een nieuw traject toevoegen en zie direct wat er daardoor schuift. Geef onderaan drie besluiten die het DT kan nemen om de knelpunten op te lossen. Gebruik Rijkshuisstijl-achtige kleuren en een rustige, zakelijke uitstraling." }
     ]
   },
 
-  /* Bouwtijd in minuten: de timer op het spiekbriefje loopt hierop af */
-  bouwtijd: 60
+  /* Bouwtijd in minuten */
+  bouwtijd: 45
 };
 </script>
 

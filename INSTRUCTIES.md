@@ -6,8 +6,7 @@ Per training maken we een nieuw HTML-slidedeck met het RADIO-logo. Je begint alt
 
 | Bestand | Wat het is |
 |---|---|
-| `radio-template.html` | Het herbruikbare template. Niet zelf gebruiken in een training, alleen kopiëren. |
-| `vraagscherper.html` | Het eerste ingevulde deck (DT van RADIO, 4 november 2026). Handig als voorbeeld. |
+| `radio-template.html` | Het herbruikbare template, ingevuld met een voorbeeld (de casus Vraagscherper) en voorbeeldnamen. Niet zelf gebruiken in een training, alleen kopiëren. |
 | `INSTRUCTIES.md` | Dit bestand. |
 
 ## Stappenplan
@@ -45,7 +44,7 @@ var TRAINING = {
 
   /* Duo's */
   deelnemers: 5,
-  namen: ["Leif","Swanda","Karin","Rene","Richard"],  /* optioneel, mag [] zijn */
+  namen: ["Deelnemer 1","Deelnemer 2","Deelnemer 3","Deelnemer 4","Deelnemer 5"],  /* optioneel, mag [] zijn */
   husselen: false,   /* true = willekeurig verdelen */
 
   /* Slide 3: demo door de trainer */
